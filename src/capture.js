@@ -6,12 +6,17 @@ import { URL } from "url";
 
 const createImagePath = (s) => `${OUTPUT_DIR}/${s.replace(/\./g, "")}.png`;
 
-const SELECTORS = [
-  ".static-positioning",
-  ".relative-positioning",
-  ".absolute-positioning",
-  ".fixed-positioning",
-];
+let [, , debugOrFirstSelector, ...selectors] = process.argv;
+
+const DEBUG = debugOrFirstSelector === "--debug";
+if (!DEBUG) {
+  selectors = [debugOrFirstSelector, ...selectors];
+}
+
+if (!selectors.length) {
+  console.error("Please provide at least one selector.");
+  process.exit(1);
+}
 
 const SERVER_URL = "http://localhost:3000";
 const OUTPUT_DIR = "images";
@@ -30,7 +35,7 @@ try {
 }
 
 const capture = async () => {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({ headless: !DEBUG });
   const page = await browser.newPage();
 
   await page.goto(SERVER_URL);
@@ -39,7 +44,7 @@ const capture = async () => {
     document.body.classList.add("capturing");
   });
 
-  for (const selector of SELECTORS) {
+  for (const selector of selectors) {
     const path = createImagePath(selector);
     const element = await page.$(selector);
 

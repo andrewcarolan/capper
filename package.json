@@ -8,10 +8,11 @@
     "compile": "pug ./src/templates/ --out ./dist/ && sass --no-source-map ./src/styles/:./dist",
     "watch": "sass -w --no-source-map ./src/styles:dist/",
     "start": "npm run compile && npm run serve",
-    "capture": "node ./src/capture"
+    "capture": "node ./src/capture",
+    "debug": "node ./src/capture --debug"
   },
   "keywords": [],
-  "author": "acarolan@brainstation.io",
+  "author": "Andrew Carolan <acarolan@brainstation.io>",
   "license": "UNLICENSED",
   "type": "module",
   "dependencies": {
