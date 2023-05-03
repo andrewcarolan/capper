@@ -24,6 +24,17 @@ body {
   padding: 0;
   width: 100vw;
   overflow-x: hidden;
+
+  &.capturing {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      display: none;
+    }
+  }
 }
 
 main {
@@ -101,7 +112,7 @@ section {
 
   &.fixed {
     position: fixed;
-    width: calc(80% - 1rem - 2px);
+    width: calc(100% - 1rem - 2px);
     margin: 0;
     top: 0;
     left: 0;

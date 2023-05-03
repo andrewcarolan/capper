@@ -1,16 +1,17 @@
 {
-  "name": "page-cap",
+  "name": "element-cap",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/capture.js",
   "scripts": {
-    "serve": "serve dist/",
-    "compile": "pug src/templates --out dist/ && sass --no-source-map src/styles:dist",
-    "watch": "sass -w --no-source-map src/styles:dist",
-    "start": "npm run compile && npm run serve"
+    "serve": "serve ./dist/",
+    "compile": "pug ./src/templates/ --out ./dist/ && sass --no-source-map ./src/styles/:./dist",
+    "watch": "sass -w --no-source-map ./src/styles:dist/",
+    "start": "npm run compile && npm run serve",
+    "capture": "node ./src/capture"
   },
   "keywords": [],
-  "author": "",
+  "author": "acarolan@brainstation.io",
   "license": "UNLICENSED",
   "type": "module",
   "dependencies": {

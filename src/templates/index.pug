@@ -3,21 +3,21 @@ head
 body
   main
     //- static
-    section
+    section.static-positioning
       h2 static (default)
       .item static
       .item static
       .item static
     
     //- relative
-    section
+    section.relative-positioning
       h2 relative
       .item static
       .item.relative relative
       .item static
     
     //- absolute
-    section
+    section.absolute-positioning
       h2 absolute
       .absolute-parent
         .item static
@@ -27,7 +27,7 @@ body
         .item static
 
     //- fixed
-    section
+    section.fixed-positioning
       h2 fixed
       .fixed-parent
         .item static
