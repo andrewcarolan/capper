@@ -1,19 +1,39 @@
+@use "sass:math";
+
 $border-colour: black;
 $background-colour: white;
-$item-size: 5rem;
+$item-size: 6rem;
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 
 :root {
   font-size: 16px;
 }
 
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 main {
   display: flex;
-  min-height: 50vh;
 }
 
 section {
-  flex-basis: 20%;
+  width: 25%;
   padding: 1rem;
+  // font-size: math.div(14, 16) * 1rem;
 }
 
 .absolute-parent {
@@ -22,9 +42,9 @@ section {
 
 .fixed-parent {
   transform: translate(0);
-  // padding-top: 1.5rem;
-  display: flex;
-  flex-direction: column;
+  padding-top: 0.5rem;
+  // display: flex;
+  // flex-direction: column;
 }
 
 .item {
@@ -34,9 +54,13 @@ section {
   border: 1px solid $border-colour;
   margin: 0.5rem;
   padding: 0.5rem;
-  font-size: 0.9rem;
+  font-size: 0.9em;
   background: $background-colour;
   font-family: "Consolas", monospace;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
 
   &.absolute,
   &.relative {

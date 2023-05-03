@@ -1,35 +1,37 @@
-main
-  
-  //- static
-  section
-    h2 static (default)
-    .item static
-    .item static
-    .item static
-  
-  //- relative
-  section
-    h2 relative
-    .item static
-    .item.relative relative
-    .item static
-  
-  //- absolute
-  section
-    h2 absolute
-    .absolute-parent
-      .item static
-      .item.absolute-silhouette
-      .item.absolute absolute
+head
+  link(rel="stylesheet", href="./index.css")
+body
+  main
+    //- static
+    section
+      h2 static (default)
       .item static
       .item static
+      .item static
+    
+    //- relative
+    section
+      h2 relative
+      .item static
+      .item.relative relative
+      .item static
+    
+    //- absolute
+    section
+      h2 absolute
+      .absolute-parent
+        .item static
+        .item.absolute-silhouette
+        .item.absolute absolute
+        .item static
+        .item static
 
-  //- fixed
-  section
-    h2 fixed
-    .fixed-parent
-      .item static
-      .item.fixed
-        span fixed
-      .item static
-      .item static
+    //- fixed
+    section
+      h2 fixed
+      .fixed-parent
+        .item static
+        .item.fixed
+          span fixed
+        .item static
+        .item static

@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "serve": "serve dist/",
-    "compile": "npx pug src/templates --out dist/"
+    "compile": "pug src/templates --out dist/ && sass --no-source-map src/styles:dist",
+    "watch": "sass -w --no-source-map src/styles:dist",
+    "start": "npm run compile && npm run serve"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +16,7 @@
   "dependencies": {
     "pug-cli": "^1.0.0-alpha6",
     "puppeteer": "^20.1.0",
+    "sass": "^1.62.1",
     "serve": "^14.2.0"
   }
 }
