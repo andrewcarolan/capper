@@ -1,0 +1,19 @@
+{
+  "name": "page-cap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "serve dist/",
+    "compile": "npx pug src/templates --out dist/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "type": "module",
+  "dependencies": {
+    "pug-cli": "^1.0.0-alpha6",
+    "puppeteer": "^20.1.0",
+    "serve": "^14.2.0"
+  }
+}
